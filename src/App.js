@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import Chat from '@app/components/Chat/Chat';
@@ -23,7 +23,7 @@ const store = createStore(
 	applyMiddleware(reduxThunk, loggerMiddleware, loggerMiddleware2)
 );
 
-class App extends Component {
+class App extends PureComponent {
 	render() {
 		return (
 			<Provider store={store}>
