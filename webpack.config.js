@@ -5,6 +5,7 @@ const outputPath = path.resolve(__dirname, './dist');
 
 const webpackConfig = {
 	resolve: {
+		extensions: ['.js', '.jsx'],
 		alias: {
 			'@app': path.resolve(__dirname, './src'),
 		},
@@ -21,9 +22,18 @@ const webpackConfig = {
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.jsx|\.js$/,
 				exclude: /node_modules/,
 				use: 'babel-loader'
+			},
+			{
+				test: /\.css$/,
+				use: [
+					'to-string-loader',
+					'style-loader',
+					'css-loader',
+					'resolve-url-loader'
+				]
 			},
 			{
 				test: /\.less$/,

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { addUser, addMessage } from "@app/actions/actions";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { addUser, addMessage } from '@app/actions/actions';
+import './Chat.less';
 
 class Chat extends Component {
 	render() {

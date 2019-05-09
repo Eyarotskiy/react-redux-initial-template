@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
-import Chat from '@app/Chat';
+import Chat from '@app/components/Chat/Chat';
 import rootReducer from '@app/reducers/reducers';
 import reduxThunk from 'redux-thunk';
 import '@app/assets/styles/style.less';
