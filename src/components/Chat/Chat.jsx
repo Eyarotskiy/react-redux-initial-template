@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addUser, addMessage } from '@app/actions/actions';
 import './Chat.less';
-import React, { PureComponent } from 'react';
 
 class Chat extends PureComponent {
 	render() {
