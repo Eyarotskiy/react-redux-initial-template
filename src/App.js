@@ -6,13 +6,13 @@ import rootReducer from '@app/reducers/reducers';
 import reduxThunk from 'redux-thunk';
 import '@app/assets/styles/style.less';
 
-const loggerMiddleware = store => next => action => {
+const loggerMiddleware = (store) => (next) => (action) => {
 	console.log('logger1' + action);
 
 	return next(action);
 };
 
-const loggerMiddleware2 = store => next => action => {
+const loggerMiddleware2 = (store) => (next) => (action) => {
 	console.log('logger2' + action);
 
 	return next(action);

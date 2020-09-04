@@ -1,26 +1,27 @@
 import { combineReducers } from "redux";
+import {actionType} from '@app/actions/actionType';
 
 const users = ['Ivan', 'Serhii'];
 const messages = ['Lorem', 'Ipsum'];
 
-const reducerOne = (state = users, action) => {
+const userReducer = (state = users, action) => {
 	switch (action.type) {
-		case 'ADD_USER':
+		case actionType.ADD_USER:
 			return [
 				...state,
-				'newUser_' + Date.now()
+				'newUser_' + Date.now(),
 			];
 		default:
 			return state;
 	}
 };
 
-const reducerTwo = (state = messages, action) => {
+const messageReducer = (state = messages, action) => {
 	switch (action.type) {
-		case 'ADD_MESSAGE':
+		case actionType.ADD_MESSAGE:
 			return [
 				...state,
-				action.message
+				action.message,
 			];
 		default:
 			return state;
@@ -28,8 +29,8 @@ const reducerTwo = (state = messages, action) => {
 };
 
 const rootReducer = combineReducers({
-	reducerOne,
-	reducerTwo,
+	userReducer,
+	messageReducer,
 });
 
 export default rootReducer;

@@ -17,16 +17,16 @@ class Chat extends PureComponent {
 	}
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
-		users: state.reducerOne,
-		messages: state.reducerTwo
+		users: state.userReducer,
+		messages: state.messageReducer,
 	}
 };
 
-const mapDispatchToProps = dispatch => bindActionCreators({
+const mapDispatchToProps = (dispatch) => bindActionCreators({
 	addUser,
-	addMessage
+	addMessage,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Chat);

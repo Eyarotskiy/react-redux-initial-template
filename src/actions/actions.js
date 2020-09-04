@@ -1,16 +1,18 @@
+import {actionType} from '@app/actions/actionType';
+
 export const addUser = () => {
-	return dispatch => {
+	return (dispatch) => {
 		dispatch({
-			type: 'ADD_USER'
+			type: actionType.ADD_USER,
 		});
 
 		dispatch(addMessage('Lorem Ipsum'));
 	}
 };
 
-export const addMessage = message => {
+export const addMessage = (message) => {
 	return {
-		type: 'ADD_MESSAGE',
-		message
+		type: actionType.ADD_MESSAGE,
+		message,
 	}
 };
